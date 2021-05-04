@@ -44,7 +44,7 @@ export default new Vuex.Store({
       },
       {
         playerName: 'Joe Finamore',
-        teamName: 'Big Money',
+        teamName: 'Big Finny',
         team: [
           {
             fighterName: "Sean O'Malley",
@@ -66,7 +66,7 @@ export default new Vuex.Store({
       },
       {
         playerName: 'Bryce Sampson',
-        teamName: 'First Round Knockouts',
+        teamName: 'Rockem Sockem Sampson',
         team: [
           {
             fighterName: 'Amanda Nunes',
