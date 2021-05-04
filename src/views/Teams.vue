@@ -1,6 +1,6 @@
 <template>
   <div id="teams">
-    <div class="heading">
+    <div class="heading mb-12">
       <h1 class="ml-12">Teams & Rosters</h1>
     </div>
     <v-container>

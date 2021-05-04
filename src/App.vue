@@ -56,31 +56,40 @@
     </v-app-bar>
 
     <v-main>
-      <router-view />
+      <transition name="fade" mode="out-in">
+        <router-view />
+      </transition>
     </v-main>
   </v-app>
 </template>
 
 <script>
 export default {
-  name: "App",
+  name: 'App',
   data: () => ({
     drawer: false,
   }),
-};
+}
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway:wght@100;400;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway:wght@100;400;900&display=swap');
 h1,
 h2,
 h3,
 h4,
 h5 {
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-weight: 900;
 }
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>

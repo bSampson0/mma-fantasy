@@ -77,7 +77,6 @@ export default {
   background: url('https://media.bleacherreport.com/f_auto,w_1536,h_1024,q_auto,c_fill/br-img-images/003/911/107/hi-res-9fe97ff6ad1e2f28dc87bcec9366bd5e_crop_north.jpg');
   padding-top: 10%;
   padding-bottom: 10%;
-  margin-bottom: 2em;
   background-size: cover;
   background-position: top;
 }
