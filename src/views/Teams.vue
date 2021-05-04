@@ -1,23 +1,36 @@
 <template>
-  <div id="teams" class="pt-12">
+  <div id="teams">
+    <div class="heading">
+      <h1 class="ml-12">Teams & Rosters</h1>
+    </div>
     <v-container>
-      <v-row class="pb-8">
-        <v-col>
-          <h1>Teams & Rosters</h1>
-        </v-col>
-      </v-row>
       <v-row>
         <v-col
           cols="12"
-          md="3"
           sm="6"
-          v-for="player in players"
-          :key="player.index"
+          v-for="(player, i) in this.$store.state.players"
+          :key="i"
         >
-          <h2>{{ player.playerName }}</h2>
-          <ul v-for="t in player.team" :key="t.name">
-            <li>{{ t }}</li>
-          </ul>
+          <v-card class="mx-auto" max-width="500" tile>
+            <div class="top-section">
+              <v-card-title v-text="player.teamName"></v-card-title>
+              <v-card-subtitle v-text="player.playerName"></v-card-subtitle>
+            </div>
+            <v-list dense>
+              <v-list-item-group>
+                <v-list-item v-for="(team, i) in player.team" :key="i">
+                  <v-list-item-content>
+                    <v-list-item-title
+                      v-text="team.fighterName"
+                    ></v-list-item-title>
+                    <v-list-item-subtitle
+                      v-text="team.weightClass"
+                    ></v-list-item-subtitle>
+                  </v-list-item-content>
+                </v-list-item>
+              </v-list-item-group>
+            </v-list>
+          </v-card>
         </v-col>
       </v-row>
     </v-container>
@@ -27,38 +40,20 @@
 <script>
 export default {
   data() {
-    return {
-      players: [
-        {
-          playerName: "Joey Bigsby",
-          team: ["Isreal Adesanya", "Dustin Poirier", "Jan Blachowicz"],
-        },
-        {
-          playerName: "Scott Caliway",
-          team: ["Kamaru Usman", "Rose Namajunas", "Aljamain Sterling"],
-        },
-        {
-          playerName: "Joe Finamore",
-          team: [
-            "Sean O'Malley",
-            "Valentina Shevchenko",
-            "Max Halloway",
-            "Fransisco Figueredo",
-          ],
-        },
-        {
-          playerName: "Bryce Sampson",
-          team: [
-            "Amanda Nunes",
-            "Francis Ngannou",
-            "Cody Garbrandt",
-            "Leon Edwards",
-          ],
-        },
-      ],
-    };
+    return {}
   },
-};
+}
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.top-section {
+  background: #134775;
+}
+.heading {
+  padding-top: 10%;
+  padding-bottom: 10%;
+  background: url('https://network-new.punditarena.com/uploads/2019/04/Conor-McGregor-1-1.jpg');
+  background-size: cover;
+  background-position: top;
+}
+</style>

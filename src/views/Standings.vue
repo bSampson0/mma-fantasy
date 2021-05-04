@@ -1,9 +1,9 @@
 <template>
-  <div id="standings" class="pt-12">
+  <div id="standings">
+    <div class="heading">
+      <h1 class="ml-12">Standings</h1>
+    </div>
     <v-container>
-      <v-row>
-        <h2>Standings</h2>
-      </v-row>
       <v-row>
         <v-col cols="12">
           <v-card>
@@ -67,7 +67,16 @@
 </template>
 
 <script>
-export default {};
+export default {}
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.heading {
+  padding-top: 10%;
+  padding-bottom: 10%;
+  margin-bottom: 2em;
+  background: url('https://www.incimages.com/uploaded_files/image/1920x1080/getty_624076130_291106.jpg');
+  background-size: cover;
+  background-position: top;
+}
+</style>
